@@ -15,5 +15,5 @@ zshrc () {
     cat linux/.zshrc > $HOME/.zshrc
 }
 
-#ohmyposh
+ohmyposh
 zshrc
