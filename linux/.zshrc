@@ -1,5 +1,5 @@
 export ZSH=$HOME/.oh-my-zsh
-OHMYPOSH=$HOME/.ohmyposh.omp.json
+OHMYPOSH=$HOME/.poshthemes/ohmyposh.omp.json
 ZSH_THEME="codespaces"
 plugins=(git)
 source $ZSH/oh-my-zsh.sh
