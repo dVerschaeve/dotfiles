@@ -1,0 +1,99 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "blocks": [
+    {
+      "alignment": "left",
+      "horizontal_offset": 0,
+      "vertical_offset": 0,
+      "segments": [
+        {
+          "type": "os",
+          "style": "diamond",
+          "foreground": "#26C6DA",
+          "background": "#546E7A",
+          "properties": {}
+        },
+        {
+          "type": "envvar",
+          "style": "diamond",
+          "powerline_symbol": "",
+          "foreground": "#ffffff",
+          "background": "#0077c2",
+          "properties": {
+            "var_name": "OHMYPWSH",
+            "prefix": " PS "
+          }
+        },
+        {
+          "background": "#0aac2d",
+          "foreground": "#262b44",
+          "powerline_symbol": "",
+          "style": "powerline",
+          "type": "root",
+          "properties" : {
+            "root_icon": "\uf50a"
+          }
+        },
+        {
+          "background": "#cf0505",
+          "foreground": "#ffffff",
+          "properties": {
+            "prefix": "  ",
+            "style": "folder"
+          },
+          "style": "powerline",
+          "powerline_symbol": "",
+          "type": "path"
+        },
+        {
+          "background": "#FFC60D",
+          "foreground": "#ffffff",
+          "powerline_symbol": "",
+          "properties": {
+            "display_stash_count": true,
+            "display_upstream_icon": true,
+            "status_colors_enabled": true,
+            "local_changes_color": "#f77622",
+            "ahead_and_behind_color": "#e43b44",
+            "behind_color": "#f77622",
+            "ahead_color": "#04c45a",
+            "stash_count_icon": "\uF692 "
+          },
+          "style": "powerline",
+          "type": "git"
+        },
+        {
+          "type": "az",
+          "style": "powerline",
+          "powerline_symbol": "\uE0B0",
+          "trailing_diamond": "",
+          "foreground": "#ffffff",
+          "background": "#33658A",
+          "properties": {
+            "template" : "{{.User.Name}}",
+            "display_id": true,
+            "display_name": true,
+            "info_separator": " @ ",
+            "prefix": " \uFD03 "
+          }
+        },
+        {
+          "background": "#0aac2d",
+          "foreground": "#ffffff",
+          "properties": {
+            "always_enabled": true,
+            "color_background": true,
+            "display_exit_code": false,
+            "error_color": "#ff0044",
+            "prefix": " \uf046"
+          },
+          "style": "diamond",
+          "trailing_diamond": "",
+          "type": "exit"
+        }
+      ],
+      "type": "prompt"
+    }
+  ],
+  "final_space": true
+}
