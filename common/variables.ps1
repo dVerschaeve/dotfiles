@@ -1,4 +1,4 @@
-$DebugMode = $False
+$DebugMode = $True
 $GITRepo = 'https://github.com/dVerschaeve/dotfiles/archive/refs/heads/main.zip'
 $DotfilesFolder = Join-Path -Path $HOME -ChildPath ".dotfiles";
 

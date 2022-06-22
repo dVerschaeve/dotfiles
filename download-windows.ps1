@@ -43,15 +43,17 @@ Function Get-DotFiles(){
     Remove-Item -Path $ArchiveFile -Confirm:$false -Force
 
     $ExtractedFolder = Get-ChildItem $DotfilesFolder -Directory -Filter 'dotfiles*'
-    Get-ChildItem -Path $ExtractedFolder | Move-Item -Destination $DotfilesFolder 
+    Write-Verbose("Extracted Folder: {0}" -f $ExtractedFolder.FullName)
+    Get-ChildItem -Path $ExtractedFolder.FullName | Move-Item -Destination $DotfilesFolder 
 
-    Remove-Item -Path $ExtractedFolder -Recurse -Confirm:$False -Force
+    Remove-Item -Path $ExtractedFolder.FullName -Recurse -Confirm:$False -Force
     Get-ChildItem $DotfilesFolder
 
-    #Invoke-Expression (Join-Path -Path $DotfilesWorkFolder -ChildPath "install-windows.ps1");
+    Invoke-Expression (Join-Path -Path $DotfilesFolder -ChildPath "install-windows.ps1");
 }
 
-Write-Host "Downloading and deploying DotFiles from repository"
+Write-Host "Downloading and deploying DotFiles from repository"  -ForegroundColor Green
+Write-Host ("DotFiles folder: {0}" -f $DotfilesFolder) -ForegroundColor Green
 If($DebugMode){
     Get-DotFiles -Verbose
 } Else {
