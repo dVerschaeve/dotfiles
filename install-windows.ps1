@@ -11,12 +11,13 @@ $CommonFolder = Join-Path $ScriptFolder "common"
 . (Join-Path $CommonFolder 'helpers.ps1')
 
 Deploy-WingetPackage -PackageName 'Microsoft.WindowsTerminal'
+Deploy-WingetPackage -PackageName 'Microsoft.VisualStudioCode'
 Deploy-WingetPackage -PackageName 'Microsoft.AzureCLI'
 Deploy-WingetPackage -PackageName 'Microsoft.Bicep'
-Deploy-WingetPackage -PackageName 'JanDeDobbeleer.OhMyPosh'
 Deploy-WingetPackage -PackageName 'Microsoft.PowerShell'
 Deploy-WingetPackage -PackageName 'Microsoft.PowerToys'
 Deploy-WingetPackage -PackageName 'Microsoft.AzureStorageExplorer'
+Deploy-WingetPackage -PackageName 'JanDeDobbeleer.OhMyPosh'
 Deploy-WingetPackage -PackageName 'Git.Git'
 Deploy-WingetPackage -PackageName 'PuTTY.PuTTY'
 Deploy-WingetPackage -PackageName 'Notepad++.Notepad++'
