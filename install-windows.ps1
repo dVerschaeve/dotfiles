@@ -8,7 +8,7 @@ if (-not ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdent
 $ScriptFolder = Split-Path $myInvocation.MyCommand.Definition
 $CommonFolder = Join-Path $ScriptFolder "common"
 
-. (Join-Path $CommonFolder 'helpers.ps1')
+. (Join-Path $CommonFolder 'pwsh\hlpWinget.ps1')
 
 Deploy-WingetPackage -PackageName 'Microsoft.WindowsTerminal'
 Deploy-WingetPackage -PackageName 'Microsoft.VisualStudioCode'

@@ -5,7 +5,7 @@ $ProgressPreference = "SilentlyContinue"
 $ScriptFolder = Split-Path $myInvocation.MyCommand.Definition
 $CommonFolder = Join-Path $ScriptFolder "common"
 
-. (Join-Path $CommonFolder 'variables.ps1') #Import Variables from file
+. (Join-Path $CommonFolder 'pwsh\variables.ps1') #Import Variables from file
 
 Function Get-DotFiles(){
     [CmdLetBinding()]Param()
