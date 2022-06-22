@@ -2,11 +2,10 @@
 $ErrorActionPreference = "Stop"
 $ProgressPreference = "SilentlyContinue"
 
-$DebugMode = $False
+$ScriptFolder = Split-Path $myInvocation.MyCommand.Definition
+$CommonFolder = Join-Path $ScriptFolder "common"
 
-$GITRepo = 'https://github.com/dVerschaeve/dotfiles/archive/refs/heads/main.zip'
-$DotfilesFolder = Join-Path -Path $HOME -ChildPath ".dotfiles";
-$ArchiveFile = Join-Path $DotfilesFolder -ChildPath "sourceFiles.zip"
+. (Join-Path $CommonFolder 'variables.ps1') #Import Variables from file
 
 Function Get-DotFiles(){
     [CmdLetBinding()]Param()

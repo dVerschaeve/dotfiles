@@ -5,7 +5,8 @@ ohmyposh() {
     sudo chmod +x /usr/local/bin/oh-my-posh
 
     mkdir ${HOME}/.poshthemes
-    cat ohmyposh/ohmyposh.omp.json > $HOME/.poshthemes/ohmyposh.omp.json
+    cat common/terminalprompt.omp.json > $HOME/.poshthemes/terminalprompt.omp.json
+    
 }
 
 zshrc () {
