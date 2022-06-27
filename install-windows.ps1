@@ -28,7 +28,7 @@ $MyDocuments = [Environment]::GetFolderPath("MyDocuments")
 $PowerShellFolders = @("PowerShell", "WindowsPowerShell")
 ForEach($PowerShellFolder in $PowerShellFolders){
     $TargetFolder = Join-Path ($MyDocuments) $PowerShellFolder
-    Write-Host "Copy PowerShell profile to" $TargetFolder
+    Write-Host "Copy PowerShell profile to" $TargetFolder  -ForegroundColor Green
     If(-Not (Test-Path $TargetFolder)){
         New-Item -Path $TargetFolder -ItemType Directory -Force | Out-Null
     } 
