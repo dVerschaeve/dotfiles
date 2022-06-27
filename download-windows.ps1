@@ -8,8 +8,8 @@ $DotfilesFolder = Join-Path -Path $HOME -ChildPath ".dotfiles";
 
 $ArchiveFile = Join-Path $DotfilesFolder -ChildPath "sourceFiles.zip" # Used to download dotfiles source files from GitHub
 
-$ScriptFolder = Split-Path $myInvocation.MyCommand.Definition
-$CommonFolder = Join-Path $ScriptFolder "common"
+#$ScriptFolder = Split-Path $myInvocation.MyCommand.Definition
+#$CommonFolder = Join-Path $ScriptFolder "common"
 
 #. (Join-Path $Folder 'pwsh\variables.ps1') #Import Variables from file
 
