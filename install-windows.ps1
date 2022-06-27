@@ -9,8 +9,10 @@ $ScriptFolder = Split-Path $myInvocation.MyCommand.Definition
 $CommonFolder = Join-Path $ScriptFolder "common"
 $WindowsFolder = Join-Path $ScriptFolder "windows"
 
+. (Join-Path $CommonFolder 'pwsh\variables.ps1') #Import Variables from file
 . (Join-Path $CommonFolder 'pwsh\hlpWinget.ps1')
-. (Join-Path $WindowsFolder 'hlpFonts.ps1')
+. (Join-Path $WindowsFolder 'Fonts\hlpFonts.ps1')
+. (Join-Path $WindowsFolder 'Terminal\Terminal.ps1')
 
 Deploy-WingetPackage -PackageName 'Microsoft.WindowsTerminal'
 Deploy-WingetPackage -PackageName 'Microsoft.VisualStudioCode'
@@ -42,3 +44,6 @@ ForEach($PowerShellFolder in $PowerShellFolders){
     Copy-Item (Join-Path $CommonFolder 'pwsh\Microsoft.PowerSHell_Profile.ps1') -Destination $TargetFolder -Force -Confirm:$false
     Copy-Item (Join-Path $CommonFolder 'pwsh\Microsoft.PowerSHell_Profile.ps1') -Destination $VSCodeFile -Force -Confirm:$false
 }
+
+$TerminalBackgroundImage = Join-path $DotfilesFolder '\Windows\Terminal\terminal_background.jpg'
+Set-WindowsTerminal -TerminalBackgroundImage $TerminalBackgroundImage
