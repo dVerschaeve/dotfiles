@@ -12,15 +12,12 @@
           "type": "os"
         },
         {
+          "type": "text",
           "background": "#0077c2",
           "foreground": "#ffffff",
           "powerline_symbol": "\ue0b0",
-          "properties": {
-            "prefix": " PS ",
-            "var_name": "OHMYPWSH"
-          },
-          "style": "diamond",
-          "type": "envvar"
+          "template": " PS {{ .Env.OHMYPWSH }}",
+          "style": "powerline"
         },
         {
           "background": "#0aac2d",
@@ -63,6 +60,14 @@
           "type": "git"
         },
         {
+          "type": "kubectl",
+          "style": "powerline",
+          "powerline_symbol": "\uE0B0",
+          "foreground": "#000000",
+          "background": "#ebcc34",
+          "template": " \uFD31 {{.Context}}{{if .Namespace}} :: {{.Namespace}}{{end}} "
+        },
+        {
           "background": "#33658A",
           "foreground": "#ffffff",
           "powerline_symbol": "\ue0b0",
@@ -71,10 +76,28 @@
             "display_name": true,
             "info_separator": " @ "
           },
-          "style": "powerline",
+          "style": "diamond",
+          "trailing_diamond": "\ue0b4",
           "template": " \ufd03 {{.User.Name}} ",
-          "trailing_diamond": "\ue0b0",
           "type": "az"
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "right",
+      "segments": [
+        {
+          "type": "time",
+          "style": "diamond",
+          "leading_diamond": "\ue0b6",
+          "background": "#08405a",
+          "foreground": "#26C6DA",
+          "properties": {
+            "time_format": "15:04:05",
+            "prefix" : "''",
+            "suffix" : "''"
+          }
         },
         {
           "background": "#0aac2d",
@@ -88,6 +111,31 @@
           "style": "diamond",
           "template": " \uf046{{ if gt .Code 0 }}\uf00d{{ else }}\uf42e{{ end }} ",
           "trailing_diamond": "\ue0b4",
+          "type": "exit"
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "foreground": "#c2c913",
+          "style": "plain",
+          "template": "\u2570\u2500",
+          "type": "text"
+        },
+        {
+          "foreground": "#26C6DA",
+          "foreground_templates": [
+            "{{ if gt .Code 0 }}#ff0000{{ end }}"
+          ],
+          "properties": {
+            "always_enabled": true
+          },
+          "style": "plain",
+          "template": "\u276f ",
           "type": "exit"
         }
       ],
