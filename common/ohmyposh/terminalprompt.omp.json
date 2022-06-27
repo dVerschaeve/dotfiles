@@ -17,7 +17,7 @@
           "background": "#0077c2",
           "foreground": "#ffffff",
           "powerline_symbol": "\ue0b0",
-          "template": " PS {{ .Env.OHMYPWSH }}",
+          "template": " PS {{ .Env.OHMYPWSH }} ",
           "style": "powerline"
         },
         {
