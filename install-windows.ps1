@@ -7,8 +7,10 @@ if (-not ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdent
 
 $ScriptFolder = Split-Path $myInvocation.MyCommand.Definition
 $CommonFolder = Join-Path $ScriptFolder "common"
+$WindowsFolder = Join-Path $ScriptFolder "windows"
 
 . (Join-Path $CommonFolder 'pwsh\hlpWinget.ps1')
+. (Join-Path $WindowsFolder 'hlpFonts.ps1')
 
 Deploy-WingetPackage -PackageName 'Microsoft.WindowsTerminal'
 Deploy-WingetPackage -PackageName 'Microsoft.VisualStudioCode'
@@ -21,6 +23,9 @@ Deploy-WingetPackage -PackageName 'JanDeDobbeleer.OhMyPosh'
 Deploy-WingetPackage -PackageName 'Git.Git'
 Deploy-WingetPackage -PackageName 'PuTTY.PuTTY'
 Deploy-WingetPackage -PackageName 'Notepad++.Notepad++'
+
+
+Get-NerdFont -FontName "CascadiaCode"
 
 # Deploy PowerShell Profile files
 $MyDocuments = [Environment]::GetFolderPath("MyDocuments")

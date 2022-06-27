@@ -1,3 +1,5 @@
+$ProgressPreference = "SilentlyContinue"
+
 $env:AZ_ENABLED = $true
 $env:DOTFILES = Join-path $Home ".dotfiles"
 $ENV:OHMYPWSH = "{0}.{1}" -f $PSVersionTable.PSVersion.Major, $PSVersionTable.PSVersion.Minor
