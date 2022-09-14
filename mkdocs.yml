@@ -18,3 +18,4 @@ theme:
   favicon: assets/favicon.png
   icon:
     logo: logo
+  site_name: dotfiles
