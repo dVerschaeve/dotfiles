@@ -1,3 +1,4 @@
+site_name: dotfiles
 theme:
   name: null
   custom_dir: mkdocs-material/material
@@ -18,4 +19,3 @@ theme:
   favicon: assets/favicon.png
   icon:
     logo: logo
-  site_name: dotfiles
