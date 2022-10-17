@@ -1,8 +1,12 @@
 $ProgressPreference = "SilentlyContinue"
 
-$env:AZ_ENABLED = $true # Depricated Setting
-$env:DOTFILES = Join-path $Home ".dotfiles"
+$ENV:AZ_ENABLED = $true # Depricated Setting
+$ENV:DOTFILES = Join-path $Home ".dotfiles"
 $ENV:OHMYPWSH = "{0}.{1}" -f $PSVersionTable.PSVersion.Major, $PSVersionTable.PSVersion.Minor
+
+$CustomModules = Join-Path $ENV:DOTFILES "common\pwsh\modules"
+Import-Module (Join-Path $CustomModules "vdhelpers")
+Import-Module (Join-Path $CustomModules "vdmodules")
 
 
 Import-Module 'Terminal-Icons' -ErrorAction SilentlyContinue
