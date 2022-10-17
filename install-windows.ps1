@@ -51,4 +51,4 @@ Set-WindowsTerminal -TerminalBackgroundImage $TerminalBackgroundImage
 
 # Deploy Standard Modules
 Import-Module (join-path $pwshModulesFolder 'vdmodules')
-Sync-vdPsModules -JSONFile (Join-Path $DotfilesFolder "\common\pwsh\pwshModules.json") .\.dotfiles\common\pwsh\modules.json
+Sync-vdPsModules -JSONFile (Join-Path $DotfilesFolder "\common\pwsh\pwshModules.json")
