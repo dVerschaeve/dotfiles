@@ -22,4 +22,9 @@ If(Test-Path $CustomFolder){
 	}
 }
 
+Function Update-DotFiles(){
+	$UpdateScript = Join-Path $env:DOTFILES "download-windows.ps1"
+	& $UpdateScript
+}
+
 Clear-Host
