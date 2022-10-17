@@ -23,8 +23,17 @@ If(Test-Path $CustomFolder){
 }
 
 Function Update-DotFiles(){
-	$UpdateScript = Join-Path $env:DOTFILES "download-windows.ps1"
-	& $UpdateScript
+	If($Null -eq $IsWindows){
+		# Running under Windows PowerShell
+		$UpdateScript = Join-Path $env:DOTFILES "download-windows.ps1"
+		& $UpdateScript
+	} Else {
+		# Running under PowerShell 7
+		If($IsWindows){
+			$UpdateScript = Join-Path $env:DOTFILES "download-windows.ps1"
+			& $UpdateScript
+		}
+	}
 }
 
 Clear-Host
