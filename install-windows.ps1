@@ -25,6 +25,7 @@ Deploy-WingetPackage -PackageName 'JanDeDobbeleer.OhMyPosh'
 Deploy-WingetPackage -PackageName 'Git.Git'
 Deploy-WingetPackage -PackageName 'PuTTY.PuTTY'
 Deploy-WingetPackage -PackageName 'Notepad++.Notepad++'
+Deploy-WingetPackage -PackageName 'Obsidian.Obsidian'
 
 
 Get-NerdFont -FontName "CascadiaCode"
