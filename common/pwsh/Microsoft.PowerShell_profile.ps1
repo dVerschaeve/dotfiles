@@ -10,7 +10,11 @@ Import-Module 'Terminal-Icons' -ErrorAction SilentlyContinue
 If(Test-Path $Env:DOTFILES){
 	$TerminalPrompt = Join-path $Env:DOTFILES "\common\ohmyposh\terminalprompt.omp.json"
 	oh-my-posh --init --shell pwsh --config $TerminalPrompt | Invoke-Expression
-	$env:POSH_AZURE_ENABLED = $true
+	# If($Null -ne (Get-InstalledModule -Name 'Az')){
+	# 	$ENV:POSH_AZURE_ENABLED = $true
+	# } Else {
+	# 	$ENV:POSH_AZURE_ENABLED = $false
+	# }
 }
 
 # DOT source workstation related files

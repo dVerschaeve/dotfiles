@@ -8,8 +8,6 @@ $WindowsFolder = Join-Path $ScriptFolder "windows"
 Write-Host $DotfilesFolder 
 
 # Deploy PowerShell Profile files
-
-
 $MyDocuments = Join-Path ${HOME} ".config"
 
 $PowerShellFolders = @("powershell")
@@ -24,3 +22,7 @@ ForEach($PowerShellFolder in $PowerShellFolders){
     Copy-Item (Join-Path $CommonFolder 'pwsh\Microsoft.PowerShell_profile.ps1') -Destination $TargetFolder -Force -Confirm:$false
     Copy-Item (Join-Path $CommonFolder 'pwsh\Microsoft.PowerShell_profile.ps1') -Destination $VSCodeFile -Force -Confirm:$false
 }
+
+# Deploy Standard Modules
+Import-Module (join-path $pwshModulesFolder $vdmodules)
+Sync-vdPsModules -JSONFile (Join-Path $DotfilesFolder "\common\pwsh\pwshModules.json") .\.dotfiles\common\pwsh\modules.json

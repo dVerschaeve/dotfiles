@@ -1,0 +1,5 @@
+{
+    "PsModules" : [
+        {"Name" : "Az.Accounts", "Version" : "Latest"}
+    ]
+}
