@@ -80,7 +80,8 @@
           "style": "diamond",
           "trailing_diamond": "\ue0b4",
           "template": " \ufd03 {{.User.Name}} ",
-          "type": "az"
+          "type": "az",
+          "source": "pwsh"
         }
       ],
       "type": "prompt"
