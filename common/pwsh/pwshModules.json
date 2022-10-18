@@ -1,5 +1,6 @@
 {
     "PsModules" : [
+        {"Name" : "Terminal-Icons", "Version" : "Latest"},
         {"Name" : "Az.Accounts", "Version" : "Latest"}
     ]
 }
