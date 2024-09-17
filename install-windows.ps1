@@ -1,5 +1,8 @@
 # Installer script for Windows Machines
-
+[cmdletbinding()]
+param(
+    [Parameter(Mandatory=$False)][Switch]$WorkPC
+)
 if (-not ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) {
     Write-Error "This script must be run with administrator priviliges"
     exit $?
@@ -14,19 +17,24 @@ $WindowsFolder = Join-Path $ScriptFolder "windows"
 . (Join-Path $WindowsFolder 'Fonts\hlpFonts.ps1')
 . (Join-Path $WindowsFolder 'Terminal\Terminal.ps1')
 
-Deploy-WingetPackage -PackageName 'Microsoft.WindowsTerminal'
-Deploy-WingetPackage -PackageName 'Microsoft.VisualStudioCode'
-Deploy-WingetPackage -PackageName 'Microsoft.AzureCLI'
-Deploy-WingetPackage -PackageName 'Microsoft.Bicep'
-Deploy-WingetPackage -PackageName 'Microsoft.PowerShell'
-Deploy-WingetPackage -PackageName 'Microsoft.PowerToys'
-Deploy-WingetPackage -PackageName 'Microsoft.AzureStorageExplorer'
-Deploy-WingetPackage -PackageName 'JanDeDobbeleer.OhMyPosh'
-Deploy-WingetPackage -PackageName 'Git.Git'
-Deploy-WingetPackage -PackageName 'PuTTY.PuTTY'
-Deploy-WingetPackage -PackageName 'Notepad++.Notepad++'
-Deploy-WingetPackage -PackageName 'Obsidian.Obsidian'
-
+If($WorkPc -eq $False){
+    Deploy-WingetPackage -PackageName 'Microsoft.WindowsTerminal'
+    Deploy-WingetPackage -PackageName 'Microsoft.VisualStudioCode'
+    Deploy-WingetPackage -PackageName 'Microsoft.AzureCLI'
+    Deploy-WingetPackage -PackageName 'Microsoft.Bicep'
+    Deploy-WingetPackage -PackageName 'Microsoft.PowerShell'
+    Deploy-WingetPackage -PackageName 'Microsoft.PowerToys'
+    Deploy-WingetPackage -PackageName 'Microsoft.AzureStorageExplorer'
+    Deploy-WingetPackage -PackageName 'JanDeDobbeleer.OhMyPosh'
+    Deploy-WingetPackage -PackageName 'Git.Git'
+    Deploy-WingetPackage -PackageName 'PuTTY.PuTTY'
+    Deploy-WingetPackage -PackageName 'Notepad++.Notepad++'
+    Deploy-WingetPackage -PackageName 'Obsidian.Obsidian'
+} Else {
+    Deploy-WingetPackage -PackageName 'Microsoft.AzureCLI'
+    Deploy-WingetPackage -PackageName 'Microsoft.Bicep'
+    Deploy-WingetPackage -PackageName 'JanDeDobbeleer.OhMyPosh'
+}
 
 Get-NerdFont -FontName "CascadiaCode"
 
